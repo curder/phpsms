@@ -3,8 +3,8 @@
 namespace Toplan\PhpSms\Agents;
 
 use Toplan\PhpSms\Interfaces\TemplateSms;
-use Toplan\PhpSms\Interfaces\VoiceCode;
 use Toplan\PhpSms\Interfaces\TemplateVoice;
+use Toplan\PhpSms\Interfaces\VoiceCode;
 
 /**
  * Class AlidayuAgent

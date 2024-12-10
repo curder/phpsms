@@ -37,16 +37,16 @@ class SerializeTest extends TestCase
         });
 
         $serialized = serialize(self::$sms);
-        
+
         $originalScheme = Sms::scheme();
-        
+
         Sms::cleanScheme();
         $this->assertEmpty(Sms::scheme());
 
         $sms = unserialize($serialized);
-        
+
         Sms::scheme($originalScheme);
-        
+
         $this->assertArrayHasKey('TestAgent', Sms::scheme());
         $this->expectOutputString('[_before_send_][_after_send_]');
         $sms->send();

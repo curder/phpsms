@@ -707,12 +707,14 @@ class Sms
         if (!is_callable(self::$howToUseQueue)) {
             throw new PhpSmsException('Expected define how to use the queue system by methods `queue`.');
         }
+
         try {
             $this->pushedToQueue = true;
 
             return call_user_func_array(self::$howToUseQueue, [$this, $this->all()]);
         } catch (\Exception $e) {
             $this->pushedToQueue = false;
+
             throw $e;
         }
     }

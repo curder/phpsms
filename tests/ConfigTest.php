@@ -26,9 +26,9 @@ class ConfigTest extends TestCase
         $this->assertCount(2, Sms::scheme());
 
         Sms::scheme([
-                'Luosimao' => '0 backup',
-                'YunPian'  => '0',
-            ]);
+            'Luosimao' => '0 backup',
+            'YunPian'  => '0',
+        ]);
         $this->assertCount(3, Sms::scheme());
         $this->assertEquals('0', Sms::scheme('YunPian'));
     }
@@ -40,8 +40,8 @@ class ConfigTest extends TestCase
         $this->assertCount(0, Sms::config('Log'));
 
         Sms::config('Luosimao', [
-                'apikey' => '123',
-            ]);
+            'apikey' => '123',
+        ]);
         $this->assertCount(2, Sms::config());
         $this->assertArrayHasKey('apikey', Sms::config('Luosimao'));
 
