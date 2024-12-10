@@ -1,4 +1,7 @@
+risky: false
+version: 8.4
 preset: recommended
+monolithic: true
 
 enabled:
   - concat_with_spaces
@@ -8,3 +11,5 @@ disabled:
   - concat_without_spaces
   - phpdoc_short_description
   - short_array_syntax
+
+name: "*.php"
