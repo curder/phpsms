@@ -72,12 +72,12 @@ class SmsTest extends TestCase
         self::$sms->template('Luosimao', '123');
         $smsData = self::$sms->all();
         $this->assertEquals([
-                'Luosimao' => '123',
-            ], $smsData['templates']);
+            'Luosimao' => '123',
+        ], $smsData['templates']);
         self::$sms->template([
-                'Luosimao'   => '1234',
-                'YunTongXun' => '6789',
-            ]);
+            'Luosimao'   => '1234',
+            'YunTongXun' => '6789',
+        ]);
         $smsData = self::$sms->all();
         $this->assertEquals([
             'Luosimao'   => '1234',
@@ -88,9 +88,9 @@ class SmsTest extends TestCase
     public function testSetData()
     {
         self::$sms->data([
-                'code' => '1',
-                'msg'  => 'msg',
-            ]);
+            'code' => '1',
+            'msg'  => 'msg',
+        ]);
         $smsData = self::$sms->all();
         $this->assertEquals([
             'code' => '1',
@@ -130,6 +130,7 @@ class SmsTest extends TestCase
         $this->expectOutputString('before_after');
         self::$sms->send();
     }
+
     public function testSetAgent()
     {
         $result = self::$sms->agent('Log')->send();

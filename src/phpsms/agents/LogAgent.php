@@ -2,8 +2,8 @@
 
 namespace Toplan\PhpSms\Agents;
 
-use Toplan\PhpSms\Interfaces\TemplateSms;
 use Toplan\PhpSms\Interfaces\ContentSms;
+use Toplan\PhpSms\Interfaces\TemplateSms;
 use Toplan\PhpSms\Interfaces\VoiceCode;
 
 /**

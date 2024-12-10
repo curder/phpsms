@@ -153,8 +153,8 @@ class Ucpaas
     }
 
     /**
-     * @param $appId
-     * @param $fromClient
+     * @param        $appId
+     * @param        $fromClient
      * @param string $to
      * @param null   $fromSerNum
      * @param null   $toSerNum
@@ -163,6 +163,7 @@ class Ucpaas
      * @throws Exception
      *
      * @return mixed|string
+     *
      * @links http://www.ucpaas.com/page/doc/doc_rest3-1.jsp
      */
     public function callBack($appId, $fromClient, $to, $fromSerNum = null, $toSerNum = null, $type = 'json')
@@ -196,14 +197,15 @@ class Ucpaas
     }
 
     /**
-     * @param $appId
-     * @param $verifyCode
-     * @param $to
+     * @param        $appId
+     * @param        $verifyCode
+     * @param        $to
      * @param string $type
      *
      * @throws Exception
      *
      * @return mixed|string
+     *
      * @links http://www.ucpaas.com/page/doc/doc_rest3-2.jsp
      */
     public function voiceCode($appId, $verifyCode, $to, $type = 'json')
@@ -233,15 +235,16 @@ class Ucpaas
     }
 
     /**
-     * @param $appId
-     * @param $to
-     * @param $templateId
+     * @param        $appId
+     * @param        $to
+     * @param        $templateId
      * @param null   $param
      * @param string $type
      *
      * @throws Exception
      *
      * @return mixed|string
+     *
      * @links http://www.ucpaas.com/page/doc/doc_rest4-1.jsp
      */
     public function templateSMS($appId, $to, $templateId, $param = null, $type = 'json')
