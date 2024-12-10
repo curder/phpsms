@@ -2,6 +2,8 @@
 
 namespace Toplan\PhpSms;
 
+use Toplan\PhpSms\Agents\Agent;
+use Toplan\PhpSms\Agents\ParasiticAgent;
 use Toplan\TaskBalance\Driver;
 use Toplan\TaskBalance\Task;
 
@@ -281,7 +283,7 @@ class Sms
             if (isset($options['scheme'])) {
                 unset($options['scheme']);
             }
-            $className = "Toplan\\PhpSms\\{$name}Agent";
+            $className = "Toplan\\PhpSms\\Agents\\{$name}Agent";
             if (isset($options['agentClass'])) {
                 $className = $options['agentClass'];
                 unset($options['agentClass']);

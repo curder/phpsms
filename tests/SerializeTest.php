@@ -1,9 +1,10 @@
 <?php
 
-use Toplan\PhpSms\Agent;
+use PHPUnit\Framework\TestCase;
+use Toplan\PhpSms\Agents\Agent;
 use Toplan\PhpSms\Sms;
 
-class SerializeTest extends PHPUnit_Framework_TestCase
+class SerializeTest extends TestCase
 {
     protected static $sms;
 
@@ -11,6 +12,7 @@ class SerializeTest extends PHPUnit_Framework_TestCase
     {
         Sms::queue(false);
         Sms::cleanScheme();
+        Sms::cleanConfig();
         Sms::scheme('TestAgent', [
             '100 backup',
             'sendContentSms' => function ($agent) {
@@ -35,12 +37,16 @@ class SerializeTest extends PHPUnit_Framework_TestCase
         });
 
         $serialized = serialize(self::$sms);
-
+        
+        $originalScheme = Sms::scheme();
+        
         Sms::cleanScheme();
         $this->assertEmpty(Sms::scheme());
 
         $sms = unserialize($serialized);
-
+        
+        Sms::scheme($originalScheme);
+        
         $this->assertArrayHasKey('TestAgent', Sms::scheme());
         $this->expectOutputString('[_before_send_][_after_send_]');
         $sms->send();

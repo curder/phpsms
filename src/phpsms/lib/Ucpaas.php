@@ -1,5 +1,7 @@
 <?php
 
+namespace Toplan\PhpSms\Lib;
+
 /**
  * Created by PhpStorm.
  * User: UCPAAS JackZhao

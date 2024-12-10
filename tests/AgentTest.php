@@ -1,10 +1,11 @@
 <?php
 
-use Toplan\PhpSms\Agent;
-use Toplan\PhpSms\LogAgent;
-use Toplan\PhpSms\ParasiticAgent;
+use PHPUnit\Framework\TestCase;
+use Toplan\PhpSms\Agents\Agent;
+use Toplan\PhpSms\Agents\LogAgent;
+use Toplan\PhpSms\Agents\ParasiticAgent;
 
-class AgentTest extends PHPUnit_Framework_TestCase
+class AgentTest extends TestCase
 {
     protected $agent = null;
 

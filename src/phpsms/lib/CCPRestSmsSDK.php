@@ -1,5 +1,7 @@
-
 <?php
+
+namespace Toplan\PhpSms\Lib;
+
 /*
  *  Copyright (c) 2014 The CCP project authors. All Rights Reserved.
  *
@@ -13,7 +15,7 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-class REST
+class CCPRestSmsSDK
 {
     private $AccountSid;
     private $AccountToken;

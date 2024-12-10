@@ -1,8 +1,9 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
 use Toplan\PhpSms\Sms;
 
-class ConfigTest extends PHPUnit_Framework_TestCase
+class ConfigTest extends TestCase
 {
     public function testClean()
     {
@@ -45,20 +46,20 @@ class ConfigTest extends PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('apikey', Sms::config('Luosimao'));
 
         Sms::config([
-                'Luosimao' => [
-                    'apikey' => '123',
-                ],
-                'YunPian' => [
-                    'apikey' => '123',
-                ],
-            ]);
+            'Luosimao' => [
+                'apikey' => '123',
+            ],
+            'YunPian' => [
+                'apikey' => '123',
+            ],
+        ]);
         $this->assertCount(3, Sms::config());
     }
 
     public function testUpdateAgentConfig()
     {
         $agent = Sms::getAgent('Luosimao');
-        $this->assertEquals('123', $agent->apikey);
+        $this->assertEquals(123, $agent->apikey);
 
         Sms::config('Luosimao', [
             'apikey' => '12345',
@@ -69,7 +70,7 @@ class ConfigTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('hello world', $agent->data);
 
         Sms::cleanConfig();
-        $this->assertEquals(null, $agent->apikey);
-        $this->assertEquals(null, $agent->data);
+        $this->assertNull($agent->apikey);
+        $this->assertNull($agent->data);
     }
 }

@@ -1,6 +1,9 @@
 <?php
 
-namespace Toplan\PhpSms;
+namespace Toplan\PhpSms\Agents;
+
+use Toplan\PhpSms\Interfaces\TemplateSms;
+use Toplan\PhpSms\Interfaces\VoiceCode;
 
 /**
  * Class SendCloudAgent

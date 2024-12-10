@@ -25,19 +25,19 @@
 
 # 服务商
 
-| 服务商 | 模板短信 | 内容短信 | 语音验证码 | 最低消费  |  最低消费单价 | 资费标准
-| ----- | :-----: | :-----: | :------: | :-------: | :-----: | :-----:
-| [Luosimao](http://luosimao.com)        | × | √ | √ | ￥850(1万条) | ￥0.085/条 | [资费标准](https://luosimao.com/service/sms#sms-price)
-| [云片网络](http://www.yunpian.com)      | × | √ | √ | ￥55(1千条) | ￥0.055/条 | [资费标准](http://www.yunpian.com/price.html)
-| [容联·云通讯](http://www.yuntongxun.com) | √ | × | √ | 充值￥500   | ￥0.055/条 | [资费标准](http://www.yuntongxun.com/price/price_sms.html)
-| [SUBMAIL](http://submail.cn)           | √ | × | √ | ￥100(1千条) | ￥0.100/条 | [资费标准](https://www.mysubmail.com/chs/store#/message)
-| [云之讯](http://www.ucpaas.com/)        | √ | × | √ | -- | ￥0.050/条 | [资费标准](http://www.ucpaas.com/service/sms.html)
-| [聚合数据](https://www.juhe.cn/)        | √ | × | √ | -- | ￥0.035/条 | [资费标准](https://www.juhe.cn/docs/api/id/54)
-| [阿里大鱼](https://www.alidayu.com/)    | √ | × | √ | -- | ￥0.045/条 | [资费标准](https://www.alidayu.com/service/price)
-| [SendCloud](https://sendcloud.sohu.com/) | √ | × | √ | -- | ￥0.048/条 | [资费标准](https://sendcloud.sohu.com/price.html)
-| [短信宝](http://www.smsbao.com/)          | × | √ | √ | ￥5(50条) | ￥0.040/条(100万条) | [资费标准](http://www.smsbao.com/fee/)
-| [腾讯云](https://www.qcloud.com/product/sms) | √ | √ | √ | -- | ￥0.045/条 | [资费标准](https://www.qcloud.com/product/sms#price)
-| [阿里云](https://www.aliyun.com/product/sms) | √ | × | × | -- | ￥0.045/条 | [资费标准](https://cn.aliyun.com/price/product#/mns/detail)
+| 服务商                                       | 模板短信 | 内容短信 | 语音验证码 |   最低消费    |     最低消费单价      |                          资费标准                           |
+|-------------------------------------------|:----:|:----:|:-----:|:---------:|:---------------:|:-------------------------------------------------------:|
+| [Luosimao](http://luosimao.com)           |  ×   |  √   |   √   | ￥850(1万条) |    ￥0.085/条     |   [资费标准](https://luosimao.com/service/sms#sms-price)    |
+| [云片网络](http://www.yunpian.com)            |  ×   |  √   |   √   | ￥55(1千条)  |    ￥0.055/条     |        [资费标准](http://www.yunpian.com/price.html)        |
+| [容联·云通讯](http://www.yuntongxun.com)       |  √   |  ×   |   √   |  充值￥500   |    ￥0.055/条     | [资费标准](http://www.yuntongxun.com/price/price_sms.html)  |
+| [SUBMAIL](http://submail.cn)              |  √   |  ×   |   √   | ￥100(1千条) |    ￥0.100/条     |  [资费标准](https://www.mysubmail.com/chs/store#/message)   |
+| [云之讯](http://www.ucpaas.com/)             |  √   |  ×   |   √   |    --     |    ￥0.050/条     |     [资费标准](http://www.ucpaas.com/service/sms.html)      |
+| [聚合数据](https://www.juhe.cn/)              |  √   |  ×   |   √   |    --     |    ￥0.035/条     |       [资费标准](https://www.juhe.cn/docs/api/id/54)        |
+| [阿里大鱼](https://www.alidayu.com/)          |  √   |  ×   |   √   |    --     |    ￥0.045/条     |      [资费标准](https://www.alidayu.com/service/price)      |
+| [SendCloud](https://sendcloud.sohu.com/)  |  √   |  ×   |   √   |    --     |    ￥0.048/条     |      [资费标准](https://sendcloud.sohu.com/price.html)      |
+| [短信宝](http://www.smsbao.com/)             |  ×   |  √   |   √   |  ￥5(50条)  | ￥0.040/条(100万条) |           [资费标准](http://www.smsbao.com/fee/)            |
+| [腾讯云](https://www.qcloud.com/product/sms) |  √   |  √   |   √   |    --     |    ￥0.045/条     |    [资费标准](https://www.qcloud.com/product/sms#price)     |
+| [阿里云](https://www.aliyun.com/product/sms) |  √   |  ×   |   ×   |    --     |    ￥0.045/条     | [资费标准](https://cn.aliyun.com/price/product#/mns/detail) |
 
 # 安装
 
@@ -46,6 +46,7 @@ composer require toplan/phpsms:~1.8
 ```
 
 开发中版本
+
 ```php
 composer require toplan/phpsms:dev-master
 ```
@@ -162,14 +163,16 @@ Sms::voice('02343')
 
 * 生成配置文件
 
-```php
+```bash
 php artisan vendor:publish
 ```
+
 生成的配置文件为config/phpsms.php，然后在该文件中按提示配置。
 
 * 使用
 
 详见API，示例：
+
 ```php
 PhpSms::make()->to($to)->content($content)->send();
 ```
@@ -187,6 +190,7 @@ PhpSms::make()->to($to)->content($content)->send();
 - 设置
 
 手动设置代理器调度方案(优先级高于配置文件)，如：
+
 ```php
 Sms::scheme([
     'SmsBao' => '80 backup'
@@ -520,7 +524,7 @@ $result = $sms->send(true);
 
 - step 2
 
-新建一个继承`Toplan\PhpSms\Agent`抽象类的代理器类，建议代理器类名为`FooAgent`，建议命名空间为`Toplan\PhpSms`。
+新建一个继承`Toplan\PhpSms\Agents\Agent`抽象类的代理器类，建议代理器类名为`FooAgent`，建议命名空间为`Toplan\PhpSms`。
 
 > 如果类名不为`FooAgent`或者命名空间不为`Toplan\PhpSms`，在使用该代理器时则需要指定代理器类，详见[高级调度配置](#高级调度配置)。
 
@@ -528,14 +532,14 @@ $result = $sms->send(true);
 
 实现相应的接口，可选的接口有:
 
-| 接口           | 说明         |
-| ------------- | :----------: |
-| ContentSms    | 发送内容短信   |
-| TemplateSms   | 发送模版短信   |
+| 接口            |   说明    |
+|---------------|:-------:|
+| ContentSms    | 发送内容短信  |
+| TemplateSms   | 发送模版短信  |
 | VoiceCode     | 发送语音验证码 |
-| ContentVoice  | 发送内容语音   |
-| TemplateVoice | 发送模版语音   |
-| FileVoice     | 发送文件语音   |
+| ContentVoice  | 发送内容语音  |
+| TemplateVoice | 发送模版语音  |
+| FileVoice     | 发送文件语音  |
 
 # 高级调度配置
 
@@ -544,7 +548,7 @@ $result = $sms->send(true);
 
 ### 指定代理器类
 
-如果你自定义了一个代理器，类名不为`FooAgent`或者命名空间不为`Toplan\PhpSms`，
+如果你自定义了一个代理器，类名不为`FooAgent`或者命名空间不为`Toplan\PhpSms\Agents`，
 那么你还可以在调度配置时指定你的代理器使用的类。
 
 * 配置方式：
@@ -568,14 +572,14 @@ Sms::scheme('agentName', [
 
 可以配置的发送过程有:
 
-| 发送过程           | 参数列表                        | 说明         |
-| ----------------- | :---------------------------: | :----------: |
-| sendContentSms    | $agent, $to, $content         | 发送内容短信   |
-| sendTemplateSms   | $agent, $to, $tmpId, $tmpData | 发送模版短信   |
-| sendVoiceCode     | $agent, $to, $code            | 发送语音验证码  |
-| sendContentVoice  | $agent, $to, $content         | 发送内容语音   |
-| sendTemplateVoice | $agent, $to, $tmpId, $tmpData | 发送模版语音   |
-| sendFileVoice     | $agent, $to, $fileId          | 发送文件语音   |
+| 发送过程              |             参数列表              |   说明    |
+|-------------------|:-----------------------------:|:-------:|
+| sendContentSms    |     $agent, $to, $content     | 发送内容短信  |
+| sendTemplateSms   | $agent, $to, $tmpId, $tmpData | 发送模版短信  |
+| sendVoiceCode     |      $agent, $to, $code       | 发送语音验证码 |
+| sendContentVoice  |     $agent, $to, $content     | 发送内容语音  |
+| sendTemplateVoice | $agent, $to, $tmpId, $tmpData | 发送模版语音  |
+| sendFileVoice     |     $agent, $to, $fileId      | 发送文件语音  |
 
 * 示例：
 ```php

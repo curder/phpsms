@@ -1,8 +1,11 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+use Toplan\PhpSms\Agents\LogAgent;
+use Toplan\PhpSms\Agents\LuosimaoAgent;
 use Toplan\PhpSms\Sms;
 
-class SmsTest extends PHPUnit_Framework_TestCase
+class SmsTest extends TestCase
 {
     protected static $sms = null;
 
@@ -33,9 +36,9 @@ class SmsTest extends PHPUnit_Framework_TestCase
     public function testGetAgent()
     {
         $agent = Sms::getAgent('Log');
-        $this->assertInstanceOf('Toplan\PhpSms\LogAgent', $agent);
+        $this->assertInstanceOf(LogAgent::class, $agent);
         $luosimao = Sms::getAgent('Luosimao');
-        $this->assertInstanceOf('Toplan\PhpSms\LuosimaoAgent', $luosimao);
+        $this->assertInstanceOf(LuosimaoAgent::class, $luosimao);
     }
 
     public function testGetTask()
@@ -113,7 +116,7 @@ class SmsTest extends PHPUnit_Framework_TestCase
     public function testBeforeSend()
     {
         Sms::beforeSend(function () {
-            print_r('before_');
+            echo 'before_';
         });
         $this->expectOutputString('before_');
         self::$sms->send();
@@ -122,12 +125,11 @@ class SmsTest extends PHPUnit_Framework_TestCase
     public function testAfterSend()
     {
         self::$sms->afterSend(function () {
-            print_r('after');
+            echo 'after';
         });
         $this->expectOutputString('before_after');
         self::$sms->send();
     }
-
     public function testSetAgent()
     {
         $result = self::$sms->agent('Log')->send();

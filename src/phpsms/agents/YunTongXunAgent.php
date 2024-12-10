@@ -1,8 +1,10 @@
 <?php
 
-namespace Toplan\PhpSms;
+namespace Toplan\PhpSms\Agents;
 
-use REST;
+use Toplan\PhpSms\Lib\CCPRestSmsSDK;
+use Toplan\PhpSms\Interfaces\TemplateSms;
+use Toplan\PhpSms\Interfaces\VoiceCode;
 
 /**
  * Class YunTongXunAgent
@@ -38,7 +40,7 @@ class YunTongXunAgent extends Agent implements TemplateSms, VoiceCode
 
     protected function rest()
     {
-        $rest = new REST($this->serverIP, $this->serverPort, '2013-12-26', 'json');
+        $rest = new CCPRestSmsSDK($this->serverIP, $this->serverPort, '2013-12-26', 'json');
         $rest->setAccount($this->accountSid, $this->accountToken);
         $rest->setAppId($this->appId);
 

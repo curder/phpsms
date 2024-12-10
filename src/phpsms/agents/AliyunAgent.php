@@ -1,6 +1,8 @@
 <?php
 
-namespace Toplan\PhpSms;
+namespace Toplan\PhpSms\Agents;
+
+use Toplan\PhpSms\Interfaces\TemplateSms;
 
 /**
  * Class AliyunAgent
