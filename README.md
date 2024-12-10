@@ -1,7 +1,5 @@
 # PhpSms
-[![StyleCI](https://styleci.io/repos/44543599/shield)](https://styleci.io/repos/44543599)
-[![Build Status](https://travis-ci.org/toplan/phpsms.svg?branch=master)](https://travis-ci.org/toplan/phpsms)
-[![Code Coverage](https://scrutinizer-ci.com/g/toplan/phpsms/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/toplan/phpsms/?branch=master)
+[![PhpSms - PHP Package](https://github.com/curder/phpsms/actions/workflows/run-test.yml/badge.svg)](https://github.com/curder/phpsms/actions/workflows/run-test.yml)
 [![Latest Stable Version](https://img.shields.io/packagist/v/toplan/phpsms.svg)](https://packagist.org/packages/toplan/phpsms)
 [![Total Downloads](https://img.shields.io/packagist/dt/toplan/phpsms.svg)](https://packagist.org/packages/toplan/phpsms)
 
